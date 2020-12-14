@@ -1,8 +1,8 @@
-import { Request, Response } from "express";
-import { container } from "tsyringe";
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
-import UserMap from "@modules/users/mappers/UserMap";
-import AuthenticateUserService from "@modules/users/services/AuthenticateUserService";
+import UserMap from '@modules/users/mappers/UserMap';
+import AuthenticateUserService from '@modules/users/services/AuthenticateUserService';
 
 export default class SessionsController {
   public async create(request: Request, response: Response): Promise<Response> {
