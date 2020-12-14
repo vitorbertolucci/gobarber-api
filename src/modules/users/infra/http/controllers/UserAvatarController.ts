@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
+import { classToClass } from 'class-transformer';
 
-import UserMap from "@modules/users/mappers/UserMap";
 import UpdateUserAvatarService from "@modules/users/services/UpdateUserAvatarService";
 
 export default class UserAvatarController {
@@ -13,8 +13,6 @@ export default class UserAvatarController {
       avatarFilename: request.file.filename,
     });
 
-    const mappedUser = UserMap.toDTO(user);
-
-    return response.json(mappedUser);
+    return response.json(classToClass(user));
   }
 }
