@@ -9,6 +9,6 @@ const providers = {
 }
 
 container.registerSingleton<ICacheProvider>(
-  'StorageProvider',
+  'CacheProvider',
   providers.redis,
 );
